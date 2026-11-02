@@ -1,0 +1,65 @@
+{
+  "name": "myweatherapp",
+  "version": "1.0.0",
+  "description": "Cross-platform Modern Weather Application for Windows, Android, and Web powered by Open-Meteo",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "node dev-server.js",
+    "dev:electron": "electron .",
+    "build:electron": "electron-builder --win",
+    "build:electron:portable": "electron-builder --win portable",
+    "cap:add:android": "cap add android",
+    "cap:copy": "cap copy",
+    "cap:sync": "cap sync",
+    "cap:open": "cap open android"
+  },
+  "keywords": [
+    "weather",
+    "cross-platform",
+    "electron",
+    "capacitor",
+    "android",
+    "windows",
+    "open-meteo"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "build": {
+    "appId": "com.myweatherapp.desktop",
+    "productName": "MyWeatherApp",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "assets/icons/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MyWeatherApp"
+    }
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.0.0"
+  }
+}

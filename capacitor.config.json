@@ -1,0 +1,9 @@
+{
+  "appId": "com.myweatherapp.app",
+  "appName": "MyWeatherApp",
+  "webDir": "src",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
